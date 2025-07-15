@@ -1,5 +1,5 @@
-pa1: pa1.c
-	gcc -std=c99 -Wall -Werror -o pa1 pa1.c
+main: main.c
+	gcc -std=c99 -Wall -Werror -o main main.c
 
 clean:
-	rm -f pa1
+	rm -f main
