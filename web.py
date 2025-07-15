@@ -19,7 +19,7 @@ HTML = """
 </head>
 <body>
 <div class="container shadow bg-white p-4 rounded">
-  <h2 class="mb-3">CSV Analyzer <small class="text-muted">(pa1)</small></h2>
+  <h2 class="mb-3">CSV Analyzer <small class="text-muted">(main)</small></h2>
   <form method="post" enctype="multipart/form-data">
     <div class="mb-3">
       <label for="csvfile" class="form-label">CSV File</label>
@@ -65,7 +65,7 @@ def index():
             index = request.form["index"]
             try:
                 result = subprocess.run(
-                    ["./pa1", filepath, row_or_col, str(index)],
+                    ["./main", filepath, row_or_col, str(index)],
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                     text=True
