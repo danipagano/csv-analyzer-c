@@ -2,10 +2,10 @@ import subprocess
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
-def run_pa1(file_path, row_or_col, index):
+def run_main(file_path, row_or_col, index):
     try:
         result = subprocess.run(
-            ["./pa1", file_path, row_or_col, str(index)],
+            ["./main", file_path, row_or_col, str(index)],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True
@@ -30,7 +30,7 @@ def process():
     if not file_path or not row_or_col or not index.isdigit():
         set_status("All fields must be filled correctly.", "red")
         return
-    output = run_pa1(file_path, row_or_col, index)
+    output = run_main(file_path, row_or_col, index)
     set_status(output, "green" if "Error" not in output.lower() else "red")
 
 def set_status(msg, color):
